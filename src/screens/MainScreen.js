@@ -50,7 +50,7 @@
 //			console.log(this.Q)
 			var trainQ;
 			jQuery.ajaxSettings.async=false;
-			jQuery.getJSON("TrainingData/30m.json",function(data){
+			jQuery.getJSON("TrainingData/10m.json",function(data){
 				trainQ = data;	
 			});
 			this.Q = trainQ;
@@ -211,7 +211,7 @@
 				}
 				
 				this.when_to_save_Q += 1;
-				if(this.when_to_save_Q == 50 * 1800){ // 50 是1s
+				if(this.when_to_save_Q == 50 * 600){ // 50 是1s
 					this.when_to_save_Q = 0;
 					var data = JSON.stringify(this.Q);
 					//var blob = new Blob([data], {type: "text/plain;charset=utf-8"});
